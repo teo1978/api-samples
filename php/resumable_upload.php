@@ -48,12 +48,9 @@ if (isset($_GET['code'])) {
   header('Location: ' . $redirect);
 }
 
-if (isset($_SESSION[$tokenSessionKey])) {
-  $client->setAccessToken($_SESSION[$tokenSessionKey]);
-}
-
 // Check to ensure that the access token was successfully acquired.
 if (isset($_SESSION[$tokenSessionKey])) {
+  $client->setAccessToken($_SESSION[$tokenSessionKey]);
   $htmlBody = '';
   try{
     // REPLACE this value with the path to the file you are uploading.
