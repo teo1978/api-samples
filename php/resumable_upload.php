@@ -53,7 +53,7 @@ if (isset($_SESSION[$tokenSessionKey])) {
 }
 
 // Check to ensure that the access token was successfully acquired.
-if ($client->getAccessToken()) {
+if (isset($_SESSION[$tokenSessionKey])) {
   $htmlBody = '';
   try{
     // REPLACE this value with the path to the file you are uploading.
